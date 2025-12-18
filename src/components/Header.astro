@@ -1,0 +1,159 @@
+<header
+    id="header"
+    class="w-full py-4 px-6 fixed top-0 z-50 transition-all duration-300 bg-[#1e1e1e]"
+>
+    <nav class="relative max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo más minimalista -->
+        <a
+            href="/"
+            class="text-xl font-bold text-white flex items-center gap-2 group"
+        >
+            <span class="text-blue-400">〈/〉</span>
+            <span class="font-mono tracking-tight">Alvaroasdev</span>
+        </a>
+
+        <!-- Desktop Menu - Más limpio -->
+        <div class="hidden md:flex">
+            <ul class="flex gap-8 items-center">
+                <li>
+                    <a
+                        href="/#about"
+                        class="text-gray-300 hover:text-white font-medium text-sm transition-colors duration-200 relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-400 hover:after:w-full after:transition-all after:duration-300"
+                        >Sobre mí</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/#projects"
+                        class="text-gray-300 hover:text-white font-medium text-sm transition-colors duration-200 relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-400 hover:after:w-full after:transition-all after:duration-300"
+                        >Proyectos</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/#stack"
+                        class="text-gray-300 hover:text-white font-medium text-sm transition-colors duration-200 relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-400 hover:after:w-full after:transition-all after:duration-300"
+                        >Stack</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/#contact"
+                        class="text-gray-300 hover:text-white font-medium text-sm transition-colors duration-200 relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-400 hover:after:w-full after:transition-all after:duration-300"
+                        >Contacto</a
+                    >
+                </li>
+            </ul>
+        </div>
+
+        <!-- Botón menú móvil (necesario para responsive) -->
+        <button
+            id="mobile-menu-btn"
+            class="md:hidden w-10 h-10 text-white flex items-center justify-center hover:text-blue-400 transition-colors cursor-pointer"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+</header>
+<!-- Botón de contacto y menú móvil -->
+<div class="flex items-center gap-4 ml-auto">
+    <!-- Mobile Menu Button - Más simple -->
+    <button
+        id="mobile-menu-btn"
+        class="md:hidden w-10 h-10 text-white flex items-center justify-center hover:text-blue-400 transition-colors cursor-pointer"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+</div>
+
+<!-- Mobile Menu Overlay - Más limpio -->
+<div
+    id="mobile-menu"
+    class="fixed inset-0 bg-[#1e1e1e] z-40 hidden flex-col items-center justify-center space-y-8 md:hidden"
+>
+    <button
+        id="close-menu-btn"
+        class="absolute top-6 right-6 text-white w-10 h-10 flex items-center justify-center hover:text-blue-400 transition-colors cursor-pointer"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <div class="relative space-y-8 flex flex-col items-center">
+        <a
+            href="/#about"
+            class="text-2xl font-medium text-gray-300 hover:text-white transition-colors duration-300"
+            >Sobre mí</a
+        >
+        <a
+            href="/#projects"
+            class="text-2xl font-medium text-gray-300 hover:text-white transition-colors duration-300"
+            >Proyectos</a
+        >
+        <a
+            href="/#stack"
+            class="text-2xl font-medium text-gray-300 hover:text-white transition-colors duration-300"
+            >Stack</a
+        >
+        <a
+            href="/#contact"
+            class="text-2xl font-medium text-gray-300 hover:text-white transition-colors duration-300"
+            >Contacto</a
+        >
+    </div>
+</div>
+
+<script>
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeMenuBtn = document.getElementById("close-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuLinks = mobileMenu?.querySelectorAll("a");
+
+    function toggleMenu() {
+        mobileMenu?.classList.toggle("hidden");
+        mobileMenu?.classList.toggle("flex");
+        document.body.classList.toggle("overflow-hidden");
+    }
+
+    mobileMenuBtn?.addEventListener("click", toggleMenu);
+    closeMenuBtn?.addEventListener("click", toggleMenu);
+
+    menuLinks?.forEach((link) => {
+        link.addEventListener("click", toggleMenu);
+    });
+</script>

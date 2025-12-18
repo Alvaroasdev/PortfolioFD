@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply min-h-screen bg-[#1e1e1e] text-white;
+    }
+}

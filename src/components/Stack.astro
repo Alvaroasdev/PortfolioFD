@@ -1,0 +1,413 @@
+<section id="stack" class="py-16 px-4 bg-[#1e1e1e]">
+    <style>
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .tech-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Asegura que las badges estén al final */
+            align-items: center;
+        }
+        .tech-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .tech-card:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+        .tech-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        .tech-card:nth-child(4) {
+            animation-delay: 0.25s;
+        }
+        .tech-card:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+        .tech-card:nth-child(6) {
+            animation-delay: 0.35s;
+        }
+        .tech-card:nth-child(7) {
+            animation-delay: 0.4s;
+        }
+        .tech-card:nth-child(8) {
+            animation-delay: 0.45s;
+        }
+        .tech-card:nth-child(9) {
+            animation-delay: 0.5s;
+        }
+        .tech-card:nth-child(10) {
+            animation-delay: 0.55s;
+        }
+        .tech-card:hover .emoji {
+            animation: float 1s ease-in-out infinite;
+        }
+        .category-badge {
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 100%; /* Asegura que todas las badges ocupen el mismo ancho */
+            text-align: center; /* Centra el texto dentro de la badge */
+            margin-top: auto; /* Empuja las badges hacia abajo */
+        }
+        .tech-card:hover .category-badge {
+            transform: scale(1.1);
+        }
+    </style>
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                Stack Tecnológico
+            </h2>
+            <div
+                class="w-16 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mt-4 rounded-full"
+            >
+            </div>
+        </div>
+
+        <!-- Tech Stack Section - Rediseño Profesional -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <!-- Encabezado de la sección -->
+    <div class="text-center mb-12">
+        <p class="text-gray-400 max-w-2xl mx-auto">
+            Tecnologías y herramientas que utilizo para crear aplicaciones modernas y eficientes
+        </p>
+    </div>
+
+    <!-- Frontend Frameworks -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+            <h3 class="text-sm uppercase tracking-wider text-gray-400 font-semibold px-4">
+                Frontend & Frameworks
+            </h3>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- React -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 text-[#61DAFB] p-2 bg-gray-900/50 rounded-xl">
+                        <svg viewBox="-10.5 -9.45 21 18.9" fill="currentColor" class="w-full h-full">
+                            <circle cx="0" cy="0" r="2" fill="currentColor"></circle>
+                            <g stroke="currentColor" stroke-width="1" fill="none">
+                                <ellipse rx="10" ry="4.5"></ellipse>
+                                <ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
+                                <ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
+                            </g>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-blue-300 transition-colors">React</h4>
+                    <p class="text-gray-400 text-sm mb-3">Biblioteca para interfaces de usuario</p>
+                    <span class="inline-block px-3 py-1 bg-blue-500/15 text-blue-300 text-xs font-medium rounded-full border border-blue-500/30">
+                        UI Library
+                    </span>
+                </div>
+            </div>
+
+            <!-- Astro -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 text-[#ff5d01] p-2 bg-gray-900/50 rounded-xl">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="w-full h-full fill-current">
+                            <title>file_type_astro</title>
+                            <path d="M5.9,18.847a7.507,7.507,0,0,0-.572,2.624,3.265,3.265,0,0,0,.551,1.553,7.427,7.427,0,0,0,2.093,1.681L13.1,28.119A7.332,7.332,0,0,0,15.2,29.287a3.239,3.239,0,0,0,1.5,0,7.381,7.381,0,0,0,2.117-1.16L24,24.711a7.512,7.512,0,0,0,2.117-1.688,3.241,3.241,0,0,0,.55-1.563,7.515,7.515,0,0,0-.587-2.643L21.547,4.551a3.973,3.973,0,0,0-.54-1.3,1.733,1.733,0,0,0-.7-.51,3.972,3.972,0,0,0-1.4-.122H13.005a3.932,3.932,0,0,0-1.4.125,1.713,1.713,0,0,0-.7.512,3.94,3.94,0,0,0-.535,1.3L5.9,18.848Zm13.24-13.2a3.329,3.329,0,0,1,.441,1.093l3.892,12.784a16.168,16.168,0,0,0-4.653-1.573L16.291,9.391a.331.331,0,0,0-.513-.169.323.323,0,0,0-.119.169l-2.5,8.557a16.14,16.14,0,0,0-4.674,1.579L12.393,6.743a3.281,3.281,0,0,1,.442-1.094,1.458,1.458,0,0,1,.582-.43,3.31,3.31,0,0,1,1.175-.1h2.793a3.314,3.314,0,0,1,1.176.1,1.454,1.454,0,0,1,.583.432ZM16.127,21.06a5.551,5.551,0,0,0,3.4-.923,2.8,2.8,0,0,1-.207,2.182A3.938,3.938,0,0,1,17.773,23.8c-.674.428-1.254.8-1.254,1.787a2.079,2.079,0,0,0,.209.914,2.49,2.49,0,0,1-1.535-2.3v-.061c0-.683,0-1.524-.962-1.524a1.028,1.028,0,0,0-.391.077,1.021,1.021,0,0,0-.552.551,1.03,1.03,0,0,0-.079.391,3.769,3.769,0,0,1-.988-2.644,4.206,4.206,0,0,1,.175-1.248c.4.757,1.92,1.32,3.731,1.32Z" style="fill-rule:evenodd"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-orange-300 transition-colors">Astro</h4>
+                    <p class="text-gray-400 text-sm mb-3">Framework web para contenido rápido</p>
+                    <span class="inline-block px-3 py-1 bg-orange-500/15 text-orange-300 text-xs font-medium rounded-full border border-orange-500/30">
+                        Framework
+                    </span>
+                </div>
+            </div>
+
+            <!-- Vite -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-purple-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 p-2 bg-gray-900/50 rounded-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="w-full h-full">
+                            <defs>
+                                <linearGradient id="a" x1="6" x2="235" y1="33" y2="344" gradientTransform="translate(0 .937) scale(.3122)" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#41d1ff"></stop>
+                                    <stop offset="1" stop-color="#bd34fe"></stop>
+                                </linearGradient>
+                                <linearGradient id="b" x1="194.651" x2="236.076" y1="8.818" y2="292.989" gradientTransform="translate(0 .937) scale(.3122)" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#ffea83"></stop>
+                                    <stop offset=".083" stop-color="#ffdd35"></stop>
+                                    <stop offset="1" stop-color="#ffa800"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#a)" d="M124.766 19.52 67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L3.305 19.532c-1.313-2.302.652-5.087 3.261-4.622L64.07 25.187a3.09 3.09 0 0 0 1.11 0l56.3-10.261c2.598-.473 4.575 2.289 3.286 4.594Zm0 0"></path>
+                            <path fill="url(#b)" d="M91.46 1.43 48.954 9.758a1.56 1.56 0 0 0-1.258 1.437l-2.617 44.168a1.563 1.563 0 0 0 1.91 1.614l11.836-2.735a1.562 1.562 0 0 1 1.88 1.836l-3.517 17.219a1.562 1.562 0 0 0 1.985 1.805l7.308-2.223c1.133-.344 2.223.652 1.985 1.812l-5.59 27.047c-.348 1.692 1.902 2.614 2.84 1.164l.625-.968 34.64-69.13c.582-1.16-.421-2.48-1.69-2.234l-12.185 2.352a1.558 1.558 0 0 1-1.793-1.965l7.95-27.562A1.56 1.56 0 0 0 91.46 1.43Zm0 0"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-purple-300 transition-colors">Vite</h4>
+                    <p class="text-gray-400 text-sm mb-3">Herramienta de construcción frontend</p>
+                    <span class="inline-block px-3 py-1 bg-purple-500/15 text-purple-300 text-xs font-medium rounded-full border border-purple-500/30">
+                        Build Tool
+                    </span>
+                </div>
+            </div>
+
+            <!-- Node.js -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-green-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-green-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 p-2 bg-gray-900/50 rounded-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48" class="w-full h-full">
+                            <path fill="#388e3c" d="M17.204 19.122l-4.907 2.715C12.113 21.938 12 22.126 12 22.329v5.433c0 .203.113.39.297.492l4.908 2.717c.183.101.41.101.593 0l4.907-2.717C22.887 28.152 23 27.965 23 27.762v-5.433c0-.203-.113-.39-.297-.492l-4.906-2.715c-.092-.051-.195-.076-.297-.076-.103 0-.205.025-.297.076M42.451 24.013l-.818.452c-.031.017-.049.048-.049.082v.906c0 .034.019.065.049.082l.818.453c.031.017.068.017.099 0l.818-.453c.03-.017.049-.048.049-.082v-.906c0-.034-.019-.065-.05-.082l-.818-.452C42.534 24.004 42.517 24 42.5 24S42.466 24.004 42.451 24.013"></path>
+                            <path fill="#37474f" d="M35.751,13.364l-2.389-1.333c-0.075-0.042-0.167-0.041-0.241,0.003 c-0.074,0.044-0.12,0.123-0.12,0.209L33,20.295l-2.203-1.219C30.705,19.025,30.602,19,30.5,19c-0.102,0-0.205,0.025-0.297,0.076h0.001l-4.907,2.715C25.113,21.892,25,22.08,25,22.282v5.433c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717 c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C35.887,28.106,36,27.918,36,27.715V13.788C36,13.612,35.904,13.45,35.751,13.364z M32.866,26.458l-2.23,1.235c-0.083,0.046-0.186,0.046-0.269,0l-2.231-1.235C28.051,26.412,28,26.326,28,26.234v-2.47 c0-0.092,0.051-0.177,0.135-0.224l2.231-1.234h-0.001c0.042-0.023,0.088-0.034,0.135-0.034c0.047,0,0.093,0.012,0.135,0.034l2.23,1.234C32.949,23.587,33,23.673,33,23.765v2.47C33,26.326,32.949,26.412,32.866,26.458z"></path>
+                            <path fill="#2e7d32" d="M17.204,19.122L12,27.762c0,0.203,0.113,0.39,0.297,0.492l4.908,2.717c0.183,0.101,0.41,0.101,0.593,0L23,22.329c0-0.203-0.113-0.39-0.297-0.492l-4.906-2.715c-0.092-0.051-0.195-0.076-0.297-0.076c-0.103,0-0.205,0.025-0.297,0.076"></path>
+                            <path fill="#4caf50" d="M17.204,19.122l-4.907,2.715C12.113,21.938,12,22.126,12,22.329l5.204,8.642c0.183,0.101,0.41,0.101,0.593,0l4.907-2.717C22.887,28.152,23,27.965,23,27.762l-5.203-8.64c-0.092-0.051-0.195-0.076-0.297-0.076c-0.103,0-0.205,0.025-0.297,0.076"></path>
+                            <path fill="#37474f" d="M47.703 21.791l-4.906-2.715C42.705 19.025 42.602 19 42.5 19c-.102 0-.205.025-.297.076h.001l-4.907 2.715C37.114 21.892 37 22.084 37 22.294v5.411c0 .209.114.402.297.503l4.908 2.717c.184.102.409.102.593 0l2.263-1.253c.207-.115.206-.412-.002-.526l-4.924-2.687C40.052 26.412 40,26.325,40,26.231v-2.466c0-.092.05-.177.13-.221l2.235-1.236h-.001c.042-.023.088-.034.135-.034.047,0,.093.012.135.034l2.235,1.237c.08.044.13.129.13.221v2.012c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393c.148-.086.24-.245.24-.417v-1.88C48,22.085,47.886,21.892,47.703,21.791zM10.703 21.791l-4.906-2.715C5.705,19.025,5.602,19,5.5,19c-.102,0-.205.025-.297.076h.001l-4.907,2.715C.114,21.892,0,22.084,0,22.294v7.465c0 .086.046.166.121.209.075.042.167.042.242-.001l2.398-1.393C2.909,28.488,3,28.329,3,28.157v-4.393c0-.092.05-.177.13-.221l2.235-1.236H5.365c.042-.023.088-.034.135-.034.047,0,.093.012.135.034l2.235,1.237C7.95,23.588,8,23.673,8,23.765v4.393c0 .172.091.331.24.417l2.398,1.393c.075.043.167.043.242.001C10.954,29.925,11,29.845,11,29.759v-7.464C11,22.085,10.886,21.892,10.703,21.791z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-green-300 transition-colors">Node.js</h4>
+                    <p class="text-gray-400 text-sm mb-3">Entorno de ejecución de JavaScript</p>
+                    <span class="inline-block px-3 py-1 bg-green-500/15 text-green-300 text-xs font-medium rounded-full border border-green-500/30">
+                        Runtime
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="mb-12">
+        <div class="flex items-center mb-6">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+            <h3 class="text-sm uppercase tracking-wider text-gray-400 font-semibold px-4">
+                Lenguajes
+            </h3>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <!-- JavaScript -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-yellow-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-yellow-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-gray-900/50 rounded-xl">
+                        <div class="w-10 h-10 bg-[#F7DF1E] flex items-center justify-center rounded">
+                            <span class="text-black font-bold text-xl leading-none font-sans">JS</span>
+                        </div>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">JavaScript</h4>
+                    <p class="text-gray-400 text-sm mb-3">Lenguaje de programación principal</p>
+                    <span class="inline-block px-3 py-1 bg-yellow-500/15 text-yellow-300 text-xs font-medium rounded-full border border-yellow-500/30">
+                        ES6+
+                    </span>
+                </div>
+            </div>
+
+            <!-- TypeScript -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-700/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-700/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-gray-900/50 rounded-xl">
+                        <div class="w-10 h-10 bg-[#0c0fc5] flex items-center justify-center rounded">
+                            <span class="text-white font-bold text-xl leading-none font-sans">TS</span>
+                        </div>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-blue-700 transition-colors">TypeScript</h4>
+                    <p class="text-gray-400 text-sm mb-3">JavaScript con tipado estático</p>
+                    <span class="inline-block px-3 py-1 bg-blue-500/15 text-blue-500 text-xs font-medium rounded-full border border-blue-500/30">
+                        Typed
+                    </span>
+                </div>
+            </div>
+
+            <!-- HTML5 -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-red-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-red-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 p-2 bg-gray-900/50 rounded-xl">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26"></path>
+                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"></path>
+                            <path d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-red-300 transition-colors">HTML5</h4>
+                    <p class="text-gray-400 text-sm mb-3">Lenguaje de marcado web</p>
+                    <span class="inline-block px-3 py-1 bg-red-500/15 text-red-300 text-xs font-medium rounded-full border border-red-500/30">
+                        Semantic
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Styling & Tools -->
+    <div>
+        <div class="flex items-center mb-6">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+            <h3 class="text-sm uppercase tracking-wider text-gray-400 font-semibold px-4">
+                Styling & Herramientas
+            </h3>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <!-- Tailwind -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-cyan-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 text-[#38B2AC] p-2 bg-gray-900/50 rounded-xl">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full">
+                            <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-cyan-300 transition-colors">Tailwind CSS</h4>
+                    <p class="text-gray-400 text-sm mb-3">Framework CSS utility-first</p>
+                    <span class="inline-block px-3 py-1 bg-cyan-500/15 text-cyan-300 text-xs font-medium rounded-full border border-cyan-500/30">
+                        Utility-First
+                    </span>
+                </div>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-pink-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 p-2 bg-gray-900/50 rounded-xl">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                            <title>file_type_css</title>
+                            <polygon points="5.902 27.201 3.656 2 28.344 2 26.095 27.197 15.985 30 5.902 27.201" style="fill:#1572b6"></polygon>
+                            <polygon points="16 27.858 24.17 25.593 26.092 4.061 16 4.061 16 27.858" style="fill:#33a9dc"></polygon>
+                            <polygon points="16 13.191 20.09 13.191 20.372 10.026 16 10.026 16 6.935 16.011 6.935 23.75 6.935 23.676 7.764 22.917 16.282 16 16.282 16 13.191" style="fill:#fff"></polygon>
+                            <polygon points="16.019 21.218 16.005 21.222 12.563 20.292 12.343 17.827 10.67 17.827 9.24 17.827 9.673 22.68 16.004 24.438 16.019 24.434 16.019 21.218" style="fill:#ebebeb"></polygon>
+                            <polygon points="19.827 16.151 19.455 20.29 16.008 21.22 16.008 24.436 22.344 22.68 22.391 22.158 22.928 16.151 19.827 16.151" style="fill:#fff"></polygon>
+                            <polygon points="16.011 6.935 16.011 8.855 16.011 10.018 16.011 10.026 8.555 10.026 8.555 10.026 8.545 10.026 8.483 9.331 8.342 7.764 8.268 6.935 16.011 6.935" style="fill:#ebebeb"></polygon>
+                            <polygon points="16 13.191 16 15.111 16 16.274 16 16.282 12.611 16.282 12.611 16.282 12.601 16.282 12.539 15.587 12.399 14.02 12.325 13.191 16 13.191" style="fill:#ebebeb"></polygon>
+                        </svg>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-pink-300 transition-colors">CSS3</h4>
+                    <p class="text-gray-400 text-sm mb-3">Estilos modernos para la web</p>
+                    <span class="inline-block px-3 py-1 bg-pink-500/15 text-pink-300 text-xs font-medium rounded-full border border-pink-500/30">
+                        Modern
+                    </span>
+                </div>
+            </div>
+
+            <!-- Git -->
+            <div class="tech-card group bg-gradient-to-br from-gray-900/80 to-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative">
+                    <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-gray-900/50 rounded-xl">
+                        <div class="text-3xl text-orange-400">🔧</div>
+                    </div>
+                    <h4 class="text-white font-bold text-lg mb-2 group-hover:text-orange-300 transition-colors">Git</h4>
+                    <p class="text-gray-400 text-sm mb-3">Sistema de control de versiones</p>
+                    <span class="inline-block px-3 py-1 bg-orange-500/15 text-orange-300 text-xs font-medium rounded-full border border-orange-500/30">
+                        Version Control
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-12">
+            <p class="text-gray-400 text-sm">
+                En constante aprendizaje y exploración de nuevas tecnologías
+            </p>
+        </div>
+
+    <!-- Certificates Section -->
+    <div class="mt-20 pt-12 border-t border-gray-800">
+        <div class="flex items-center mb-12">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+            <h3 class="text-sm uppercase tracking-wider text-gray-400 font-semibold px-4">
+                Certificados
+            </h3>
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Certificado 1 -->
+            <div class="group bg-gray-900/60 border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 hover:bg-gray-900/80 transition-all duration-300 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white font-semibold text-base mb-2">Curso Maquetación</h4>
+                <p class="text-gray-400 text-sm mb-4 flex-grow">Domina los conceptos fundamentales de HTML, CSS y BEM.</p>
+                <a href="/certificates/Udemy1.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold rounded hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-300 self-start">
+                    
+                    Ver PDF
+                </a>
+            </div>
+
+            <!-- Certificado 2 -->
+            <div class="group bg-gray-900/60 border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 hover:bg-gray-900/80 transition-all duration-300 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white font-semibold text-base mb-2">Ultimate Frontend</h4>
+                <p class="text-gray-400 text-sm mb-4 flex-grow">Bootcamp de: CSS, Boostrap, JQ, JS, React</p>
+                <a href="/certificates/Udemy2.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold rounded hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-300 self-start">
+                   
+                    Ver PDF
+                </a>
+            </div>
+
+            <!-- Certificado 3 -->
+            <div class="group bg-gray-900/60 border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 hover:bg-gray-900/80 transition-all duration-300 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white font-semibold text-base mb-2">Javascript Moderno</h4>
+                <p class="text-gray-400 text-sm mb-4 flex-grow">Fundamentos de JavaScript moderno, ES6+ y buenas prácticas.</p>
+                <a href="/certificates/Devtalles.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold rounded hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-300 self-start">
+                   
+                    Ver PDF
+                </a>
+            </div>
+
+            <!-- Certificado 4 -->
+            <div class="group bg-gray-900/60 border border-gray-800 rounded-lg p-6 hover:border-blue-500/50 hover:bg-gray-900/80 transition-all duration-300 flex flex-col">
+                <div class="flex items-start justify-between mb-4">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-white font-semibold text-base mb-2">Fundamentos Web y Python básico</h4>
+                <p class="text-gray-400 text-sm mb-4 flex-grow">Fundamentos de programación, web, git y python básico.</p>
+                <a href="/certificates/Certificado-Python.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold rounded hover:bg-blue-500/30 hover:border-blue-500/50 transition-all duration-300 self-start">
+                  
+                    Ver PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>

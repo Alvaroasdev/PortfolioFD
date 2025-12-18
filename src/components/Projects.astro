@@ -1,0 +1,504 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  images: string[]; // Cambiado a array de strings
+  detailedDescription: string;
+  problemsSolved: string[];
+  learnings: string[];
+  demoLink: string;
+  githubLink: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Pomo Focus",
+    images: ["/public/POMO1.png", "/public/POMO2.png", "/public/POMO3.png"],
+    description:
+      "Web que permite al usuario gestionar su tiempo utilizando el método Pomodoro para cuidar su postura y mejorar concentración.",
+    tags: ["Astro", "JavaScript", "Tailwind", "LocalStorage"],
+    detailedDescription:
+      "Web que permite al usuario gestionar su tiempo utilizando el método Pomodoro para cuidar su postura y mejorar concentración.",
+    problemsSolved: [
+      "Gestionar el tiempo de manera eficiente",
+      "Cuidar la postura al usar el ordenador",
+      "Mejorar la concentración al realizar tareas",
+    ],
+    learnings: [
+      "Implementación de LocalStorage",
+      "Mejora de UX con notificaciones visuales y alertas de tiempo",
+      "Gestión del estado de la app con JavaScript puro y eventos del DOM",
+    ],
+    demoLink: "https://posture-helper.netlify.app/",
+    githubLink: "https://github.com/Alvaroasdev/PostureHelper",
+  },
+  {
+    title: "Task Management App",
+    images: ["/public/TASK1.png", "/public/TASK2.png", "/public/TASK3.png"],
+    description: "Aplicación de gestión de tareas / meetings con calendario.",
+    tags: ["React", "TypeScript", "Tailwind", "LocalStorage", "Supabase"],
+    detailedDescription:
+      "Sistema de gestión de proyectos inspirado en Kanban que facilita la colaboración en equipo. Permite crear tableros personalizados, asignar tareas, establecer fechas límite y comentar en tiempo real.",
+    problemsSolved: [
+      "Mejora en la visibilidad del progreso del equipo",
+      "Eliminación de correos electrónicos para coordinación de tareas",
+      "Organización visual intuitiva del flujo de trabajo",
+    ],
+    learnings: [
+      "Implementación de drag-and-drop accesible",
+      "Sincronización de datos en tiempo real con Firestore",
+      "Arquitectura de componentes escalable en Vue 3",
+    ],
+    demoLink: "https://taskmaster-green.vercel.app/",
+    githubLink: "https://github.com/Alvaroasdev/Taskmaster",
+  },
+  {
+    title: "Weather Forecast API",
+    images: [
+      "/public/WEATHER1.png",
+      "/public/WEATHER2.png",
+      "/public/WEATHER3.png",
+    ],
+    description:
+      "Interfaz moderna para visualizar pronósticos meteorológicos utilizando APIs públicas.",
+    tags: ["React", "TypeScript", "Tailwind", "LocalStorage", "OpenWeather"],
+    detailedDescription:
+      "Una aplicación web rápida y responsiva que ofrece pronósticos meteorológicos precisos por ubicación. Detecta automáticamente la ubicación del usuario y ofrece visualizaciones detalladas de temperatura, humedad y viento.",
+    problemsSolved: [
+      "Acceso rápido a información meteorológica",
+      "Visualización clara de datos complejos",
+      "Consumo eficiente de datos móviles",
+    ],
+    learnings: [
+      "Integración de geolocalización en el navegador",
+      "Manejo de errores y estados de carga en llamadas API",
+      "Cambio de diseño en función del clima",
+    ],
+    demoLink: "#https://weatherv3-rw76.vercel.app/",
+    githubLink: "#https://github.com/Alvaroasdev/weatherv3",
+  },
+];
+---
+
+<section id="projects" class="relative py-40 px-6 bg-[#1e1e1e]">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
+                Mis proyectos 
+            </h2>
+            <div
+                class="w-16 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-4 rounded-full"
+            >
+            </div>
+        </div>
+    <p class="text-gray-400 text-center mb-12 text-lg">
+      Aquí puedes ver algunos de mis proyectos más destacados.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project, index) => (
+          <article
+            class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 flex flex-col h-full group cursor-pointer project-card"
+            data-project-index={index}
+          >
+            {/* image */}
+            <img src={project.images[0]} alt={project.title} />
+            <div class="w-full relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center text-white/20 text-4xl font-bold group-hover:scale-110 transition-transform duration-500">
+                {project.title[0]}
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-2xl font-bold text-white mb-2">
+                {project.title}
+              </h3>
+              <p class="text-gray-400 mb-4 flex-1">{project.description}</p>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                {project.tags.map((tag) => (
+                  <span class="px-3 py-1 bg-white/10 text-blue-300 rounded-full text-xs font-medium border border-white/5">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <button
+                class="view-details-btn inline-flex items-center justify-center px-6 py-2 bg-white text-gray-900 rounded-full font-bold hover:bg-gray-200 transition-colors w-full cursor-pointer"
+                data-project-index={index}
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <h2
+      class="text-center text-white text-3xl md:text-4xl font-extrabold tracking-tight mt-20"
+    >
+      🚀 Performance Web
+    </h2>
+
+    <!-- Descripción opcional -->
+    <p class="text-center text-gray-300 mt-4 max-w-xl mx-auto">
+      Lighthouse Score: <span class="text-blue-400 font-bold">100/100</span> ✅ Optimizado
+      para velocidad y experiencia de usuario.
+    </p>
+
+    <!-- Imagen -->
+    <div class="flex justify-center mt-10">
+      <img
+        src="/public/Performanceweb.webp"
+        alt="Performance web"
+        class="rounded-3xl border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300"
+      />
+    </div>
+
+    {/* Modal Structure */}
+    <div
+      id="projectModal"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+    >
+      <div
+        class="bg-[#1e1e1e] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto modal-content"
+      >
+        {/* Modal content will be populated by JavaScript */}
+      </div>
+    </div>
+  </div>
+
+  <script define:vars={{ projects }}>
+    // Use data passed from Astro frontmatter
+    const projectsData = projects;
+
+    // Modal functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("projectModal");
+
+      // Open modal when clicking on project cards or buttons
+      document
+        .querySelectorAll(".project-card, .view-details-btn")
+        .forEach((element) => {
+          element.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const index = this.getAttribute("data-project-index");
+            openModal(index);
+          });
+        });
+
+      // Open modal function
+      function openModal(index) {
+        const project = projectsData[index];
+        if (!project) return;
+
+        // Create image carousel HTML
+        let imagesHTML = "";
+
+        if (project.images && project.images.length > 0) {
+          if (project.images.length === 1) {
+            // Una sola imagen
+            imagesHTML = `
+  <div class="w-full h-96 rounded-t-2xl bg-black flex items-center justify-center">
+    <img src="${project.images[0]}" alt="${project.title}" class="max-h-full max-w-full object-contain" />
+  </div>
+`;
+          } else {
+            // Carrusel para múltiples imágenes
+            imagesHTML = `
+            <div class="relative w-full h-96 overflow-hidden rounded-t-2xl">
+              <div class="flex transition-transform duration-300 ease-in-out " id="imageSlider-${index}">
+                ${project.images
+                  .map(
+                    (img, imgIndex) => `
+                  <div class="w-full h-96 flex-shrink-0 flex items-center justify-center bg-transparent">
+  <img src="${img}" alt="${project.title}" class="max-h-full max-w-full object-contain" />
+</div>
+
+                `,
+                  )
+                  .join("")}
+              </div>
+              
+              <!-- Navigation buttons -->
+              ${
+                project.images.length > 1
+                  ? `
+                <button class="absolute cursor-pointer left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all prev-btn" data-index="${index}">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button class="absolute cursor-pointer right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all next-btn" data-index="${index}">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                
+                <!-- Image indicators -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  ${project.images
+                    .map(
+                      (_, imgIndex) => `
+                    <button class="indicator-btn w-3 h-3 rounded-full ${imgIndex === 0 ? "bg-white" : "bg-white/50"}" 
+                            data-index="${index}" data-img-index="${imgIndex}"></button>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              `
+                  : ""
+              }
+            </div>
+          `;
+          }
+        }
+
+        // Create modal content
+        const modalContent = `
+        ${imagesHTML}
+        
+        <div class="sticky top-0 bg-[#1e1e1e] border-b border-white/10 px-6 py-4 flex justify-between items-center">
+          <h3 class="text-2xl font-bold text-white">${project.title}</h3>
+          <button id="closeModal" class="text-gray-400 hover:text-white text-2xl">
+            &times;
+          </button>
+        </div>
+        
+        <div class="p-6">
+          <!-- Descripción detallada -->
+          <div class="mb-8">
+            <h4 class="text-xl font-bold text-white mb-3">Descripción</h4>
+            <p class="text-gray-300">${project.detailedDescription}</p>
+          </div>
+          
+          <!-- Problemas resueltos -->
+          <div class="mb-8">
+            <h4 class="text-xl font-bold text-white mb-3">Problemas que resuelve</h4>
+            <ul class="list-disc list-inside space-y-2">
+              ${project.problemsSolved.map((problem) => `<li class="text-gray-300">${problem}</li>`).join("")}
+            </ul>
+          </div>
+          
+          <!-- Lo que aprendí -->
+          <div class="mb-8">
+            <h4 class="text-xl font-bold text-white mb-3">Lo que aprendí</h4>
+            <ul class="list-disc list-inside space-y-2">
+              ${project.learnings.map((learning) => `<li class="text-gray-300">${learning}</li>`).join("")}
+            </ul>
+          </div>
+          
+          <!-- Tecnologías -->
+          <div class="mb-8">
+            <h4 class="text-xl font-bold text-white mb-3">Tecnologías</h4>
+            <div class="flex flex-wrap gap-2">
+              ${project.tags
+                .map(
+                  (tag) => `
+                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
+                  ${tag}
+                </span>
+              `,
+                )
+                .join("")}
+            </div>
+          </div>
+          
+          <!-- Enlaces -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="${project.demoLink}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-bold hover:opacity-90 transition-opacity flex-1 text-center"
+            >
+              🌐 Ver Demo
+            </a>
+            <a 
+              href="${project.githubLink}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-3 bg-white/10 text-white rounded-full font-bold hover:bg-white/20 transition-colors flex-1 text-center"
+            >
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              Código en GitHub
+            </a>
+          </div>
+        </div>
+      `;
+
+        // Insert content and show modal
+        modal.querySelector(".modal-content").innerHTML = modalContent;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+
+        // Add close button event
+        modal
+          .querySelector("#closeModal")
+          .addEventListener("click", closeModal);
+
+        // Initialize carousel if multiple images
+        if (project.images && project.images.length > 1) {
+          initializeCarousel(index);
+        }
+      }
+
+      // Initialize carousel functionality
+      function initializeCarousel(projectIndex) {
+        const slider = document.getElementById(`imageSlider-${projectIndex}`);
+        const prevBtn = modal.querySelector(
+          `.prev-btn[data-index="${projectIndex}"]`,
+        );
+        const nextBtn = modal.querySelector(
+          `.next-btn[data-index="${projectIndex}"]`,
+        );
+        const indicators = modal.querySelectorAll(
+          `.indicator-btn[data-index="${projectIndex}"]`,
+        );
+
+        let currentSlide = 0;
+        const totalSlides = projectsData[projectIndex].images.length;
+
+        function updateSlider() {
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+          // Update indicators
+          indicators.forEach((indicator, index) => {
+            if (index === currentSlide) {
+              indicator.classList.remove("bg-white/50");
+              indicator.classList.add("bg-white");
+            } else {
+              indicator.classList.remove("bg-white");
+              indicator.classList.add("bg-white/50");
+            }
+          });
+        }
+
+        // Previous button event
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            currentSlide =
+              currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+            updateSlider();
+          });
+        }
+
+        // Next button event
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            currentSlide =
+              currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+            updateSlider();
+          });
+        }
+
+        // Indicator events
+        indicators.forEach((indicator) => {
+          indicator.addEventListener("click", () => {
+            currentSlide = parseInt(indicator.getAttribute("data-img-index"));
+            updateSlider();
+          });
+        });
+
+        // Auto-slide every 5 seconds (optional)
+        let slideInterval = setInterval(() => {
+          currentSlide =
+            currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+          updateSlider();
+        }, 5000);
+
+        // Clear interval on modal close
+        modal.addEventListener("modalClose", () => {
+          clearInterval(slideInterval);
+        });
+      }
+
+      // Close modal function
+      function closeModal() {
+        // Dispatch event to clear intervals
+        modal.dispatchEvent(new Event("modalClose"));
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal when clicking outside
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+
+  <style>
+    /* Smooth transitions for modal */
+    #projectModal {
+      transition: opacity 0.3s ease;
+    }
+
+    #projectModal:not(.hidden) {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Carousel styles */
+    #projectModal .prev-btn,
+    #projectModal .next-btn {
+      opacity: 0;
+      transition:
+        opacity 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    #projectModal .relative:hover .prev-btn,
+    #projectModal .relative:hover .next-btn {
+      opacity: 1;
+    }
+
+    /* Image indicators */
+    #projectModal .indicator-btn {
+      transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    #projectModal .indicator-btn:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</section>
