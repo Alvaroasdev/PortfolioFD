@@ -12,24 +12,29 @@ interface Props {
 }
 
 const {
-  title,
-  description = "Portfolio de Álvaro Alonso — Frontend Developer especializado en Astro, React y rendimiento web.",
-  image = "https://portfolio-desarrollador-frontend.vercel.app/og-home.jpg",
+  title = "Álvaro Alonso — Frontend Developer",
+  description = "Frontend Developer especializado en Astro, React y Tailwind. Creo aplicaciones rápidas, accesibles y optimizadas para SEO.",
+  image = "/og-home.jpg",
   url = "https://portfolio-desarrollador-frontend.vercel.app/",
 } = Astro.props;
+
+// Asegurar que la URL de imagen es absoluta
+const absoluteImageUrl = image.startsWith('http') ? image : `https://portfolio-desarrollador-frontend.vercel.app${image}`;
 
 ---
 
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO básico -->
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="keywords" content="Frontend Developer, React, Astro, JavaScript, TypeScript, Web Development" />
+  <meta name="author" content="Álvaro Alonso" />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical -->
@@ -38,19 +43,26 @@ const {
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" />
 
-  <!-- Open Graph (LinkedIn, Facebook) -->
+  <!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
+  <meta property="og:image" content={absoluteImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content={url} />
+  <meta property="og:site_name" content="Portfolio - Álvaro Alonso" />
+  <meta property="og:locale" content="es_ES" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={image} />
+  <meta name="twitter:image" content={absoluteImageUrl} />
+  <meta name="twitter:creator" content="@AlvaroAsdev" />
 
+  <!-- Adicionales -->
+  <meta name="theme-color" content="#1e1e1e" />
   <meta name="generator" content={Astro.generator} />
 </head>
 
